@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>是否能考试驾照</h1>
+    <p>请输入年龄<br>
+        <input type="text" id="kuang">
+    </p>
+    <button id="niu">判断是否能考驾照</button>
+    <h1 id="h1">0</h1>
+    <script>
+        // 得到按钮和框
+        var kuang = document.getElementById('kuang')
+        var niu = document.getElementById('niu')
+        var h1 = document.getElementById('h1')
+
+        // 点击按钮添加监听
+        niu.onclick = function () {
+            // 得到用户年龄
+            var age = Number(kuang.value)
+            // 用if语句判断年龄是否在18到70之间
+            if (age >= 18 && age <= 70) {
+                h1.innerHTML = '能';
+
+            } else {
+                h1.innerHTML = '不能';
+
+            }
+            
+        }
+
+    </script>
+</body>
+
+</html>

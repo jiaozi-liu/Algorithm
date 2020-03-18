@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        计算摄氏温度对应的华氏温度<br>
+        <input type="text" id="kuang"></p>
+    <p><button id="niu">计算温度</button></p>
+    <h1 id="h1">0</h1>
+    <script>
+        var kuang = document.getElementById('kuang')
+        var niu = document.getElementById('niu')
+        var h1 = document.getElementById('h1')
+
+        niu.onclick = function () {
+
+            var C = Number(kuang.value);
+            var F = (9 / 5) * C + 32;
+
+            h1.innerHTML = F
+
+        }
+
+    </script>
+</body>
+
+</html>

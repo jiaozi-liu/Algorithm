@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        请输入体重（公斤）：
+        <br>
+        <input type="text" id="kuang1">
+    </p>
+    <p>
+        请输入身高（米）：
+        <br>
+        <input type="text" id="kuang2">
+    </p>
+    <p>
+        <button id="btn">计算BMI指数</button>
+    </p>
+    <h1 id="resultBox1"></h1>
+    <h1 id="resultBox2"></h1>
+
+    <script>
+        var kuang1 = document.getElementById('kuang1');
+        var kuang2 = document.getElementById('kuang2');
+        var btn = document.getElementById('btn');
+        var resultBox1 = document.getElementById('resultBox1');
+        var resultBox2 = document.getElementById('resultBox2');
+
+        // 给按钮添加监听
+        btn.onclick = function () {
+            // 读取体重
+            var w = Number(kuang1.value);
+            // 读取身高
+            var h = Number(kuang2.value);
+            // 计算BMI
+            var bmi = w / Math.pow(h, 2);
+            // 显示结果
+            resultBox1.innerHTML = '你的BMI指数是' + bmi;
+            // 继续算，根据用户的身高，合理BMI是24，计算他的理想体重
+            // 计算理想体重
+            var lixang = 24 * Math.pow(h, 2);
+            // 计算和理想体重相差
+            var diff = w - lixang;
+            // 显示理想体重
+            resultBox2.innerHTML = '根据您的身高，您的理想体重是' + lixang + '公斤~~~哈哈哈，你离理想体重差' + diff + '公斤';
+        }
+    </script>
+</body>
+
+</html>

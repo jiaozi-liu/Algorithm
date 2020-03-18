@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户输入年龄判断是否能结婚</title>
+</head>
+
+<body>
+    <h3>用户输入年龄判断是否能结婚</h3>
+    <label><input type="radio" name="sex" id="nan">男</label>
+    <label><input type="radio" name="sex" id="nv">女</label>
+    <p><input type="text" id="kuang"></p>
+    <button id="niu">点击判断能否结婚</button>
+    <h1 id="result">0</h1>
+
+    <script>
+        // 得到按钮和框
+        var nan = document.getElementById('nan')
+        var nv = document.getElementById('nv')
+        var kuang = document.getElementById('kuang')
+        var niu = document.getElementById('niu')
+        var result = document.getElementById('result')
+
+        // 点击按钮的时候
+        niu.onclick = function () {
+            // 得到年龄
+            var age = Number(kuang.value)
+            //如果男被选中了，.checked专门判断单选按钮是否选中了的。
+            if (nan.checked) {
+                if (age >= 20) {
+                    result.innerHTML = '可以结婚'
+                } else {
+                    result.innerHTML = '不可以结婚'
+                }
+            }
+            //如果男被选中了，.checked专门判断单选按钮是否选中了的。
+            if (nv.checked) {
+                if (age >= 22) {
+                    result.innerHTML = '可以结婚'
+                } else {
+                    result.innerHTML = '不可以结婚'
+                }
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>

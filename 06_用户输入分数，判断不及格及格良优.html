@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>输入分数判断成绩</h2>
+    <p>请输入分数<br>
+        <input type="text" id="kuang">
+    </p>
+    <button id="niu">判断是否及格</button>
+    <h1 id="h1">0</h1>
+    <script>
+        // 得到按钮和框
+        var kuang = document.getElementById('kuang')
+        var niu = document.getElementById('niu')
+        var h1 = document.getElementById('h1')
+
+        // 点击按钮添加监听
+        niu.onclick = function () {
+            // 得到用户年龄
+            var socre = Number(kuang.value)
+            // 用if语句判断年龄是否在18到70之间
+            if (socre >= 85) {
+                h1.innerHTML = '优秀'
+            } else if (socre >= 75) {
+                h1.innerHTML = '良好'
+            } else if (socre >= 60) {
+                h1.innerHTML = '及格'
+            } else if (socre < 60) {
+                h1.innerHTML = '不及格'
+            }
+        }
+
+    </script>
+</body>
+
+</html>

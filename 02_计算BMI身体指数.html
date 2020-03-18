@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>BMI指数</h2>
+    <p>身高(米) <br><input type="text" id="kuang"></p>
+    <p>体重（公斤）<br><input type="text" id="kuang1"></p>
+    <button id="niu">BMI指数按钮</button>
+    <h1 id="h1">0</h1>
+    <h1 id="h2">0</h1>
+    <script>
+        var kuang = document.getElementById('kuang')
+        var kuang1 = document.getElementById('kuang1')
+        var niu = document.getElementById('niu')
+        var h1 = document.getElementById('h1')
+        var h2 = document.getElementById('h2')
+
+        niu.onclick = function () {
+            // 读取身高
+            var h = Number(kuang.value);
+            // 读取体重
+            var w = Number(kuang1.value);
+            // 计算BMI
+            var bmi = w / Math.pow(h, 2);
+            // 四舍五入到后两位
+            bmi=Math.round(bmi*100)/100;
+            // 显示结果
+            h1.innerHTML = '你的BMI指数是:' + bmi;
+            
+            // 继续算，根据用户的身高，合理BMI是24，计算他的理想体重
+            // 计算理想体重
+            var lix = 24 * Math.pow(h, 2)
+            // 计算和理想体重相差
+            var di = w - lix
+            // 四舍五入到后两位
+            di=Math.round(di*100)/100;
+            // 显示理想体重
+            h2.innerHTML = '根据您的身高，您的理想体重是:' + lix + '你距离理想体重差' + di;
+
+        }
+    </script>
+</body>
+
+</html>

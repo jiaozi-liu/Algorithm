@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="kuang">
+    </div>
+    <div>
+        <input type="text" id="kuang1">
+    </div>
+    <div>
+        <button id="niu">+</button>
+        <button id="niu1">-</button>
+        <button id="niu2">x</button>
+        <button id="niu3">÷</button>
+    </div>
+    <h1 id="h1">0</h1>
+    <script>
+        // 得到两个框本身，四个按钮和一个h1
+        var kuang = document.getElementById('kuang');
+        var kuang1 = document.getElementById('kuang1');
+
+        var niu = document.getElementById('niu');
+        var niu1 = document.getElementById('niu1');
+        var niu2 = document.getElementById('niu2');
+        var niu3 = document.getElementById('niu3');
+        var h1 = document.getElementById('h1');
+
+        // 给加号按钮添加点击监听事件
+        niu.onclick = function () {
+            // 得到的两个框中的值
+            var a = Number(kuang.value);
+            var b = Number(kuang1.value);
+
+            // 计算和
+            var sum = a + b;
+
+            // 显示结果，innerHTML今是输出语句的一种
+            h1.innerHTML = sum;
+        }
+         // 给减号按钮添加点击监听事件
+         niu1.onclick = function () {
+            // 得到的两个框中的值
+            var a = Number(kuang.value);
+            var b = Number(kuang1.value);
+
+            // 计算和
+            var sum = a - b;
+
+            // 显示结果，innerHTML今是输出语句的一种
+            h1.innerHTML = sum;
+        }
+         // 给乘号按钮添加点击监听事件
+         niu2.onclick = function () {
+            // 得到的两个框中的值
+            var a = Number(kuang.value);
+            var b = Number(kuang1.value);
+
+            // 计算和
+            var sum = a * b;
+
+            // 显示结果，innerHTML今是输出语句的一种
+            h1.innerHTML = sum;
+        }
+        // 给乘号按钮添加点击监听事件
+        niu3.onclick = function () {
+            // 得到的两个框中的值
+            var a = Number(kuang.value);
+            var b = Number(kuang1.value);
+
+            // 计算和
+            var sum = a / b;
+
+            // 显示结果，innerHTML今是输出语句的一种
+            h1.innerHTML = sum;
+        }
+    </script>
+</body>
+
+</html>

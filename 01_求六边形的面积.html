@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        请输入正六边形的边<br>
+        <input type="text" id="kuang"></p>
+    <p><button id="niu">计算面积</button></p>
+    <h1 id="h1">0</h1>
+    <script>
+        var kuang = document.getElementById('kuang')
+        var niu = document.getElementById('niu')
+        var h1 = document.getElementById('h1')
+        // 给按钮添加点击事件
+        niu.onclick = function () {
+            // 得到用户填写的边长值，不要忘记使用Number()变为数字
+            var s = Number(kuang.value);
+            // 套用公式
+            var A = (3 * Math.sqrt(3) * Math.pow(s, 2)) / 2;
+            // 四舍五入到小数点后两位
+            A = Math.round(A * 100) / 100;
+            // 显示结果
+            h1.innerHTML = '正六边形的面积是：' + A
+
+        }
+    </script>
+</body>
+
+</html>
