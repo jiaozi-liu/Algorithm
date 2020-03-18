@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        b {
+            color: darkorange;
+        }
+    </style>
+
+</head>
+
+<body>
+    <p>请输入判断水仙花数:<br>
+        <input type="text" id="frame">
+    </p>
+    <button id="but">计算</button>
+    <h3 id="result">0</h3>
+    <SCript>
+
+        //得到所有
+        var frame = document.getElementById('frame')
+        var but = document.getElementById('but')
+        var result = document.getElementById('result')
+
+        //添加按钮监听    
+        but.onclick = function () {
+
+            // 得到三位数
+            var n = Number(frame.value);
+
+            // 拆分
+            // 个位
+            var gewei = n % 10;
+            // 十位
+            var shiwei = Math.floor(n / 10) % 10
+            // 百位
+            var baiwei = Math.floor(n / 100)
+
+            // 用水仙花数的判断条件进行判断
+            if ((Math.pow(gewei, 3)) + (Math.pow(shiwei, 3)) + (Math.pow(baiwei, 3)) == n) {
+                result.innerHTML = '<b>' + n + '</b>' + '是水仙花数';
+            } else {
+                result.innerHTML = '<b>' + n + '</b>' + '不是水仙花数';
+            }
+
+
+        }
+
+    </SCript>
+
+</body>
+
+</html>

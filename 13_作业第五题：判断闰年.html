@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <p>请输入年份判断软黏:<br>
+        <input type="text" id="frame">
+    </p>
+    <button id="but">计算</button>
+    <h3 id="result">0</h3>
+    <script>
+
+        //得到所有
+        var frame = document.getElementById('frame')
+        var but = document.getElementById('but')
+        var result = document.getElementById('result')
+
+        //添加按钮监听    
+        but.onclick = function () {
+
+            // 得到闰年条件
+            var year = Number(frame.value)
+
+            //判断 
+            if ((year % 4 == 0 && year % 100 != 0) || (year % 100 == 0 && year % 400 != 0)) {
+                result.innerHTML = year + '是闰年'
+            } else {
+                result.innerHTML = year + '不是闰年'
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        b {
+            color: crimson;
+        }
+    </style>
+</head>
+
+<body>
+    <h4>请问您是平日入园还是周末入园？</h4>
+    <p>
+        <label><input type="radio" name='sex' id="pingri" checked>平日</label>
+        <label><input type="radio" name='sex' id="zhoumo">周末</label>
+    </p>
+    <p>请输入成年数量：<br>
+        <input type="text" value="1" id="frame">
+    </p>
+    <p>请输入儿童数量<br>
+        <input type="text" value="1" id="frame1">
+    </p>
+    <button id="but">计算</button>
+    <h4 id="result">0</h4>
+    <script>
+
+        // 得到所有
+        var pingri = document.getElementById('pingri')
+        var zhoumo = document.getElementById('zhoumo')
+        var frame = document.getElementById('frame')
+        var frame1 = document.getElementById('frame1')
+        var but = document.getElementById('but')
+        var result = document.getElementById('result')
+
+        // 添加监听
+        but.onclick = function () {
+
+            // 得到成人
+            var adult = Number(frame.value)
+            // 得到儿童
+            var child = Number(frame1.value)
+
+            // 定义成人和儿童票价
+            var adult_fares, chlid_fares
+
+            // 判断用户选的是什么
+            if (pingri.checked) {
+                adult_fares = 50;
+                chlid_fares = 30;
+            } else if (zhoumo.checked) {
+                adult_fares = 80;
+                chlid_fares = 60;
+            }
+
+            // 计算票价
+            var fares = (adult_fares * adult) + (chlid_fares * child);
+
+            // 显示结果
+            result.innerHTML = '成人票价' + adult_fares + '元/人，' + adult + '人共' + adult_fares * adult + '元'
+                + '<br>' + '小孩票价' + chlid_fares + '元/人，' + child + '人共' + chlid_fares * adult + '元'
+                + '<br>' + '票价总计：' + '<b>' + fares + '</b>'+'元'
+
+
+        }
+    </script>
+
+</body>
+
+</html>

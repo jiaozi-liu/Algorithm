@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <p>请输入数学成绩:<br>
+        <input type="text" id="frame">
+    </p>
+    <p>请输入英语成绩:<br>
+        <input type="text" id="frame1">
+    </p>
+    <button id="but">计算</button>
+    <h3 id="result">0</h3>
+    <SCript>
+
+        //得到所有
+        var frame = document.getElementById('frame')
+        var frame1 = document.getElementById('frame1')
+        var but = document.getElementById('but')
+        var result = document.getElementById('result')
+
+        //添加按钮监听    
+        but.onclick = function () {
+
+            //得到数学
+            var Math = Number(frame.value);
+
+            //得到英语
+            var English = Number(frame1.value);
+
+            // 用if语句判断
+            if (Math >= 80 && English >= 90) {
+                result.innerHTML = '得到苹果手机和笔记本电脑'
+            } else if (Math >= 80) {
+                result.innerHTML = '得到苹果手机'
+            } else if (English >= 90) {
+                result.innerHTML = '得到笔记本手机'
+            } else {
+                result.innerHTML = '就会挨揍'
+            }
+
+        }
+
+    </SCript>
+
+</body>
+
+</html>

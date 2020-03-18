@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        b {
+            color: crimson;
+        }
+    </style>
+</head>
+
+<body>
+    <p>请输入体重（公斤）:<br>
+        <input type="text" id="frame">
+    </p>
+    <p>请输入身高（米）:<br>
+        <input type="text" id="frame1">
+    </p>
+    <button id="but">计算</button>
+    <h3 id="result">0</h3>
+    <SCript>
+
+        //得到所有
+        var frame = document.getElementById('frame')
+        var frame1 = document.getElementById('frame1')
+        var but = document.getElementById('but')
+        var result = document.getElementById('result')
+
+        //添加按钮监听    
+        but.onclick = function () {
+
+            //得到体重
+            var w = Number(frame.value);
+
+            //得到身高
+            var h = Number(frame1.value);
+
+            //计算
+            var bmi = w / Math.pow(h, 2);
+
+            // 类型、先定义出来，一会赋值
+            var type = ''
+
+            // 用if语句判断，分档
+            if (bmi <= 18.5) {
+                type = '偏瘦'
+            } else if (bmi < 25) {
+                type = '正常'
+            } else if (bmi < 30) {
+                type = '偏瘦'
+            } else if (bmi >= 30) {
+                type = '过度肥胖'
+            }
+
+            // 将BMI结果四舍五入，如果四舍五入到小数点后一位
+            var round_bmi = Math.round(bmi * 10) / 10
+
+            // 根据用户的身高，反求健康的体重，用24定
+            var w_bmi = Math.round(Math.pow(h, 2) * 24 * 10) / 10
+
+            // 显示结果
+            result.innerHTML = '您的体型是：' + '<b>' + type + '</b>'
+                + '<br>' + '你的BMI指数是' + round_bmi + '公斤'
+                + '<br>' + '根据您的身高，推算您的合理体重是' + w_bmi + '公斤'
+                + '<br>' + '您还差' + Math.round((w - w_bmi) * 10) / 10 + '公斤';
+        }
+
+    </SCript>
+
+</body>
+
+</html>
